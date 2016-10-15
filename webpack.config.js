@@ -10,7 +10,11 @@ var config = {
       inline: true,
       port: 8080
    },
-	
+
+   debug: true,
+
+   devtool: "eval-source-map",
+   
    module: {
       loaders: [
          {
