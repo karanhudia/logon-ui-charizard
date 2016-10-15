@@ -1,12 +1,10 @@
 import React from 'react';
+import LogonScreen from './LogonScreen.jsx';
 
 class App extends React.Component {
    render() {
       return (
-         <div>
-            Making a login and register page.
-            Also, i am required to show 'Hello, World!'
-         </div>
+         <LogonScreen/>
       );
    }
 }

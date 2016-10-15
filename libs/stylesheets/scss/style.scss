@@ -1,7 +1,47 @@
-$badass: #bada55;
-body { 
-  margin: 0; 
-  background-color: $badass; 
-  margin-top: 5px;
-  margin-bottom: 5px;
+// ALL THE VARIABLES ARE DEFINED HERE
+// Theme colors
+$primaryColor: #4996e8;
+$primaryAccentColor:  #fff;
+$secondaryColor: #f6f6f6;
+$secondaryAccentColor: #929292;
+
+// CSS
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: $secondaryColor;
+}
+.background-cover-image {
+  background-image: url(../../../resources/images/cycles.jpg);
+  background-size: cover;
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%;
+}
+.logon-screen-half {
+  background: url(images/bg-2.jpg);
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+.material-button {
+  height: 40px;
+  width: 100%;
+  display: block;
+  background-color: $primaryColor;
+  color: $primaryAccentColor;
+  border: none;
+}
+.material-textfield {
+  height: 40px;
+  width: 100%;
+  display: block;
+  color: $secondaryAccentColor;
+  background-color: $primaryAccentColor;
+  border: none;
+  margin: 30px 0px;
 }

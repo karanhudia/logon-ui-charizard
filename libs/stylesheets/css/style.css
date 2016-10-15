@@ -1,5 +1,38 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
 body {
-  margin: 0;
-  background-color: #bada55;
-  margin-top: 5px;
-  margin-bottom: 5px; }
+  background-color: #f6f6f6; }
+
+.background-cover-image {
+  background-image: url(../../../resources/images/cycles.jpg);
+  background-size: cover;
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100%; }
+
+.logon-screen-half {
+  background: url(images/bg-2.jpg);
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100%; }
+
+.material-button {
+  height: 40px;
+  width: 100%;
+  display: block;
+  background-color: #4996e8;
+  color: #fff;
+  border: none; }
+
+.material-textfield {
+  height: 40px;
+  width: 100%;
+  display: block;
+  color: #929292;
+  background-color: #fff;
+  border: none;
+  margin: 30px 0px; }
