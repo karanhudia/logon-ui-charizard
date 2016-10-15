@@ -2,9 +2,8 @@
 // Theme colors
 $primaryColor: #4996e8;
 $primaryAccentColor:  #fff;
-$secondaryColor: #f6f6f6;
+$secondaryColor: #ebebeb;
 $secondaryAccentColor: #929292;
-$secondaryAccentDarkColor: #ebebeb;
 
 // Fonts used
 // For title, heading using sans-serif Fonts
@@ -15,6 +14,7 @@ $primaryFont: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif ;
   margin: 0px;
   padding: 0px;
 }
+// Setting default font for the page
 body {
   font-family: $primaryFont;
 }
@@ -31,17 +31,7 @@ body {
   position: absolute;
   right: 0px;
   height: 100%;
-}
-.material-button {
-  height: 40px;
-  width: 100%;
-  display: block;
-  font-size: 18px;
-  font-family: $primaryFont;
-  background-color: $primaryColor;
-  color: $primaryAccentColor;
-  border: none;
-}
+  }
 .material-textfield {
   height: 40px;
   width: 100%;
@@ -55,15 +45,18 @@ body {
 .material-textfield:focus {
   outline: 0;
 }
+.raised {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
 .tab-selector {
+  @extend .raised;
   width: 150px;
   height: 150px;
-  background-color: $secondaryAccentDarkColor;
+  background-color: $secondaryColor;
   color: $secondaryAccentColor;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 .tab-selector:active {
   background-color: $primaryColor;
@@ -179,4 +172,91 @@ body {
 }
 .material-input-group__text-field:focus ~ .material-input-group__animated-bar:before, .material-input-group__text-field:focus ~ .material-input-group__animated-bar:after {
   width:50%;
+}
+
+// CSS for material button with ripple effect
+.material-button {
+  -webkit-appearance: none; //To remove platform related styling if any- khudia
+  position: relative;
+  display: block; //To spread the button across full width
+  width: 100%;
+  height: 40px;
+  background: $primaryColor;
+  color: $primaryAccentColor;
+  font: inherit;
+  font-size: 18px;
+  border: none;
+  @extend .raised;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  // Hover, focus effects
+  &:hover,
+  &:focus {
+    background-color: darken($primaryColor, 5%);
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+// Mixin for primary and secondary colored button and hover effect accordingly
+@mixin button-modifier($class) {
+  $color: $primaryColor;
+  $colorAccent: $primaryAccentColor;
+
+  @if ($class == 'secondary') {
+    $color: $secondaryColor;
+    $colorAccent: $secondaryAccentColor;
+  }
+
+  .material-button--#{$class} {
+      color: $colorAccent;
+      background-color: $color;
+      &:hover {
+      background-color: darken($color, 5%);
+      }
+    }
+};
+// Including the button modifiers mixins
+@include button-modifier(primary);
+@include button-modifier(secondary);
+/********/
+
+.material-button-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.material-button-ripple__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .25);
+  .material-button-ripple.is-active & {
+    animation: animate-ripple .4s ease-in;
+  }
+}
+
+// Ripple Animation
+@keyframes animate-ripple {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
 }
