@@ -5,9 +5,13 @@ class UserInformation extends React.Component {
    constructor() {
        super();
        this.openTab = this.openTab.bind(this);
+       this.handleFocus = this.handleFocus.bind(this);
    }
    componentDidMount () {
        this.openTab('loginContent');
+   }
+   handleFocus(event) {
+       $(event.currentTarget).addClass('used');
    }
    openTab(tabId) {
         if( tabId == 'loginContent') {
@@ -41,12 +45,21 @@ class UserInformation extends React.Component {
                 </a>
                 <div ref="loginContent" className="credential-dialog__tab-content">
                     <div className="material-input-group">      
-                        <input className="material-input-group__text-field" type="text" required />
+                        <input 
+                            onFocus={(event) => this.handleFocus(event)}
+                            className="material-input-group__text-field" 
+                            type="text" 
+                            pattern="^([A-Za-z]|[0-9]|_)+$"
+                            required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Username</label>
                     </div>
                     <div className="material-input-group">      
-                        <input className="material-input-group__text-field" type="password" required />
+                        <input 
+                        onFocus={(event) => this.handleFocus(event)}
+                        className="material-input-group__text-field" 
+                        type="password"
+                        required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
                     </div>
@@ -55,17 +68,33 @@ class UserInformation extends React.Component {
                 </div>
                 <div ref="registerContent" className="credential-dialog__tab-content">
                     <div className="material-input-group">      
-                        <input className="material-input-group__text-field" type="text" required />
+                        <input 
+                        onFocus={(event) => this.handleFocus(event)}
+                        className="material-input-group__text-field" 
+                        type="text" 
+                        pattern="^([A-Za-z]|[0-9]|_)+$"
+                        title="Enter an alphanumeric username, _ is allowed." 
+                        required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Username</label>
                     </div>
                     <div className="material-input-group">      
-                        <input className="material-input-group__text-field" type="password" required />
+                        <input 
+                        onFocus={(event) => this.handleFocus(event)}
+                        className="material-input-group__text-field" 
+                        type="password" 
+                        title="Enter a password with minimum 8 characters" 
+                        required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
                     </div>
                     <div className="material-input-group">      
-                        <input className="material-input-group__text-field" type="text" required />
+                        <input 
+                        onFocus={(event) => this.handleFocus(event)}
+                        className="material-input-group__text-field"
+                        type="text"
+                        pattern="[0-9]{10}"
+                        required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Phone Number</label>
                     </div>
