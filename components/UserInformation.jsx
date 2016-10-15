@@ -50,6 +50,7 @@ class UserInformation extends React.Component {
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
                     </div>
+                    <a className="forgot-password" href="#">Forgot Password? Create a new password</a>
                     <MaterialButton title="Login"/>
                 </div>
                 <div ref="registerContent" className="credential-dialog__tab-content">
