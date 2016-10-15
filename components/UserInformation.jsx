@@ -35,19 +35,39 @@ class UserInformation extends React.Component {
                 </a>
                 <a href="javascript:void(0)" ref="registerTab" className="credential-dialog__tab-link" onClick={() => this.openTab('registerContent')}>
                     <div className="tab-selector">
-                        <i className="material-icons">person_add</i>
+                        <i className="material-icons register-user-icon">person_add</i>
                         <label className="tab-selector__block-label">Register</label>
                     </div>
                 </a>
                 <div ref="loginContent" className="credential-dialog__tab-content">
-                    <input className="material-textfield" type="text" placeholder="Username" />
-                    <input className="material-textfield" type="password" placeholder="Password" />
+                    <div className="material-input-group">      
+                        <input className="material-input-group__text-field" type="text" required />
+                        <span className="material-input-group__animated-bar"></span>
+                        <label className="material-input-group__label">Username</label>
+                    </div>
+                    <div className="material-input-group">      
+                        <input className="material-input-group__text-field" type="password" required />
+                        <span className="material-input-group__animated-bar"></span>
+                        <label className="material-input-group__label">Password</label>
+                    </div>
                     <MaterialButton title="Login"/>
                 </div>
                 <div ref="registerContent" className="credential-dialog__tab-content">
-                    <input className="material-textfield" type="text" placeholder="Username" />
-                    <input className="material-textfield" type="password" placeholder="Password" />
-                    <input className="material-textfield" type="number" placeholder="Phone Number" />
+                    <div className="material-input-group">      
+                        <input className="material-input-group__text-field" type="text" required />
+                        <span className="material-input-group__animated-bar"></span>
+                        <label className="material-input-group__label">Username</label>
+                    </div>
+                    <div className="material-input-group">      
+                        <input className="material-input-group__text-field" type="password" required />
+                        <span className="material-input-group__animated-bar"></span>
+                        <label className="material-input-group__label">Password</label>
+                    </div>
+                    <div className="material-input-group">      
+                        <input className="material-input-group__text-field" type="text" required />
+                        <span className="material-input-group__animated-bar"></span>
+                        <label className="material-input-group__label">Phone Number</label>
+                    </div>
                     <MaterialButton title="Register"/>
                 </div>
             </div>

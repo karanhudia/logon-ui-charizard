@@ -6,13 +6,17 @@ $secondaryColor: #f6f6f6;
 $secondaryAccentColor: #929292;
 $secondaryAccentDarkColor: #ebebeb;
 
+// Fonts used
+// For title, heading using sans-serif Fonts
+$primaryFont: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif;
+
 // CSS
 * {
   margin: 0px;
   padding: 0px;
 }
 body {
-  background-color: $secondaryColor;
+  font-family: $primaryFont;
 }
 .background-cover-image {
   background-image: url(../../../resources/images/cycles.jpg);
@@ -23,7 +27,6 @@ body {
   height: 100%;
 }
 .logon-screen-half {
-  background: url(images/bg-2.jpg);
   width: 50%;
   position: absolute;
   right: 0px;
@@ -33,6 +36,8 @@ body {
   height: 40px;
   width: 100%;
   display: block;
+  font-size: 18px;
+  font-family: $primaryFont;
   background-color: $primaryColor;
   color: $primaryAccentColor;
   border: none;
@@ -45,6 +50,10 @@ body {
   background-color: $primaryAccentColor;
   border: none;
   margin: 30px 0px;
+  padding-left: 10px;
+}
+.material-textfield:focus {
+  outline: 0;
 }
 .tab-selector {
   width: 150px;
@@ -66,7 +75,7 @@ body {
 .credential-dialog {
   width: 300px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .register-user-icon {
   right: 13px;
@@ -106,4 +115,68 @@ body {
 .credential-dialog__tab-link:focus .tab-selector {
   background-color: $primaryColor;
   color: $primaryAccentColor;
+}
+// CSS for material like textfield
+.material-input-group { 
+  position: relative; 
+  margin: 30px 0px; 
+}
+.material-input-group__text-field {
+  color: #929292;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  font-size: 18px;
+  font-family: $primaryFont;
+  padding-left: 5px;
+  padding-top: 10px;
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+.material-input-group__text-field:focus { 
+  outline:none; 
+}
+.material-input-group__label {
+  color: #aaaaaa; 
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 14px;
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
+.material-input-group__text-field:focus ~ .material-input-group__label, 
+.material-input-group__text-field:valid ~ .material-input-group__label {
+  top: -5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $primaryColor;
+}
+.material-input-group__animated-bar {
+  position: relative;
+  display: block;
+  width: 100%; 
+  }
+.material-input-group__animated-bar:before, .material-input-group__animated-bar:after {
+  content: '';
+  height: 2px; 
+  width: 0;
+  bottom: 1px; 
+  position: absolute;
+  background: $primaryColor; 
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
+.material-input-group__animated-bar:before {
+  left:50%;
+}
+.material-input-group__animated-bar:after {
+  right:50%; 
+}
+.material-input-group__text-field:focus ~ .material-input-group__animated-bar:before, .material-input-group__text-field:focus ~ .material-input-group__animated-bar:after {
+  width:50%;
 }
