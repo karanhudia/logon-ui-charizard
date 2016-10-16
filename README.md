@@ -23,9 +23,8 @@ Follow the instructions in the link to install Node.js
 
 A step by step guide to get your development environment up and running
 
-```
+
 Open command prompt
-```
 
 
 Install all the packages
