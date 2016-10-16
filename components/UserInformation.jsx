@@ -30,6 +30,7 @@ class UserInformation extends React.Component {
    render() {
       return (
          <div className="logon-screen-half">
+            <img className="logon-screen__logo" src="../resources/images/logo.png"/>
             <div className="credential-dialog">
                 <a href="javascript:void(0)" ref="loginTab" className="credential-dialog__tab-link" onClick={() => this.openTab('loginContent')}>
                     <div className="tab-selector">
@@ -53,6 +54,7 @@ class UserInformation extends React.Component {
                             required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Username</label>
+                        <label className="material-input-group__error">Username should be alphanumeric</label>
                     </div>
                     <div className="material-input-group">      
                         <input 
@@ -62,8 +64,9 @@ class UserInformation extends React.Component {
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
+                        <label className="material-input-group__error">Password should be minimum 8 characters</label>
                     </div>
-                    <a className="forgot-password" href="#">Forgot Password? Create a new password</a>
+                    <a className="small-link-primary" href="#">Forgot Password? Create a new password</a>
                     <MaterialButton title="Login"/>
                 </div>
                 <div ref="registerContent" className="credential-dialog__tab-content">
@@ -77,6 +80,7 @@ class UserInformation extends React.Component {
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Username</label>
+                        <label className="material-input-group__error">Username should be alphanumeric</label>
                     </div>
                     <div className="material-input-group">      
                         <input 
@@ -87,6 +91,7 @@ class UserInformation extends React.Component {
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
+                        <label className="material-input-group__error">Password should be minimum 8 characters</label>
                     </div>
                     <div className="material-input-group">      
                         <input 
@@ -98,6 +103,7 @@ class UserInformation extends React.Component {
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Phone Number</label>
+                        <label className="material-input-group__error">Phone Number should be of 10 digits</label>
                     </div>
                     <MaterialButton title="Register"/>
                 </div>

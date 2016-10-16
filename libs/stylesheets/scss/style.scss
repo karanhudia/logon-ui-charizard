@@ -41,6 +41,11 @@ body {
     width: 100%;
   }
 }
+.logon-screen__logo {
+  display: block;
+  margin: auto;
+  padding-top: 30px;
+}
 // Card like raised effect
 .raised {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
@@ -112,7 +117,7 @@ body {
 }
 // Animation CSS ends here
 
-.forgot-password{
+.small-link-primary{
     color: $color-primary;
     font-size: $font-small;
     text-align: center;
