@@ -132,7 +132,3 @@ $image-cover: '../../../resources/images/open.jpg';
 ## Authors
 
 * **Karan Hudia** - [Github](https://github.com/karanhudia)
-
-## License
-
-This project is licensed under the MIT License
