@@ -61,6 +61,7 @@ class UserInformation extends React.Component {
                         onFocus={(event) => this.handleFocus(event)}
                         className="material-input-group__text-field" 
                         type="password"
+                        pattern=".{8,}"
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Password</label>
@@ -87,6 +88,7 @@ class UserInformation extends React.Component {
                         onFocus={(event) => this.handleFocus(event)}
                         className="material-input-group__text-field" 
                         type="password" 
+                        pattern=".{8,}"
                         title="Enter a password with minimum 8 characters" 
                         required />
                         <span className="material-input-group__animated-bar"></span>
