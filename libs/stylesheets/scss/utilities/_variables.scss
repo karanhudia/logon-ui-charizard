@@ -1,0 +1,36 @@
+/*****ALL THE VARIABLES ARE DEFINED HERE*****/
+// Theme colors
+$color-primary: #4996e8;
+$color-primary-accent:  #fff;
+
+$color-secondary: #ebebeb;
+$color-secondary-accent: #929292;
+
+$color-error: red;
+
+/*****Fonts used*****/
+// For title, heading using sans-serif Fonts
+$font-primary: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif ;
+
+/*****Path for given resources*****/
+// Path for background cover image
+$image-cover: '../../../resources/images/cycles.jpg';
+
+/*****Sizes for different css properties*****/
+// Maximum page width for removing cover image on small devices
+$break-small: 680px;
+
+// Tabs related
+$tab-width: 150px;
+$no-of-tabs: 2;
+$tab-top-space: 100px;
+
+// Color effects on events such as hovering and clicking
+$dark-percent: 5%;
+
+// Font Sizes
+$font-small: 12px;
+$font-medium: 18px;
+$font-input-label: 14px;
+
+$text-field-margin: 30px;

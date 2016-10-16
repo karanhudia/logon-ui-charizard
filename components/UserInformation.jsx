@@ -73,7 +73,7 @@ class UserInformation extends React.Component {
                         className="material-input-group__text-field" 
                         type="text" 
                         pattern="^([A-Za-z]|[0-9]|_)+$"
-                        title="Enter an alphanumeric username, _ is allowed." 
+                        title="Enter an alphanumeric username, '_' is allowed" 
                         required />
                         <span className="material-input-group__animated-bar"></span>
                         <label className="material-input-group__label">Username</label>
@@ -93,6 +93,7 @@ class UserInformation extends React.Component {
                         onFocus={(event) => this.handleFocus(event)}
                         className="material-input-group__text-field"
                         type="text"
+                        title="Enter a ten digit mobile number"
                         pattern="[0-9]{10}"
                         required />
                         <span className="material-input-group__animated-bar"></span>

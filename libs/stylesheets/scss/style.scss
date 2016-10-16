@@ -1,14 +1,13 @@
-// ALL THE VARIABLES ARE DEFINED HERE
-// Theme colors
-$primaryColor: #4996e8;
-$primaryAccentColor:  #fff;
-$secondaryColor: #ebebeb;
-$secondaryAccentColor: #929292;
-$errorColor: red;
+// Imports
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'material-button-ripple';
+@import 'material-textfield';
 
-// Fonts used
-// For title, heading using sans-serif Fonts
-$primaryFont: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif ;
+// Including the button modifiers mixins
+@include button-modifier(primary);
+@include button-modifier(secondary);
+/********/
 
 // CSS
 * {
@@ -17,67 +16,54 @@ $primaryFont: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif ;
 }
 // Setting default font for the page
 body {
-  font-family: $primaryFont;
+  font-family: $font-primary;
 }
+
+// Setting background cover image and responsive behavior
 .background-cover-image {
-  background-image: url(../../../resources/images/cycles.jpg);
+  background-image: url($image-cover);
   background-size: cover;
   width: 50%;
   position: fixed;
   left: 0px;
   height: 100%;
-  @media screen and (max-width: 680px){
+  @media screen and (max-width: $break-small){
     display: none;
   }
 }
+// Dividing screen to show rest of the HTML
 .logon-screen-half {
   width: 50%;
   position: absolute;
   right: 0px;
   height: 100%;
-  @media screen and (max-width: 680px){
+  @media screen and (max-width: $break-small){
     width: 100%;
   }
 }
-
-.material-textfield {
-  height: 40px;
-  width: 100%;
-  display: block;
-  color: $secondaryAccentColor;
-  background-color: $primaryAccentColor;
-  border: none;
-  margin: 30px 0px;
-  padding-left: 10px;
-}
-.material-textfield:focus {
-  outline: 0;
-}
+// Card like raised effect
 .raised {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
+/***** Tabs styling *****/
 .tab-selector {
   @extend .raised;
-  width: 150px;
-  height: 150px;
-  background-color: $secondaryColor;
-  color: $secondaryAccentColor;
+  width: $tab-width;
+  height: $tab-width;
+  background-color: $color-secondary;
+  color: $color-secondary-accent;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  &:active {
+    background-color: $color-primary;
+    color: $color-primary-accent;
+  }
+  .material-icons {
+    font-size: 100px !important;
+  }
 }
-.tab-selector:active {
-  background-color: $primaryColor;
-  color: $primaryAccentColor;
-}
-.material-icons {
-  font-size: 100px !important;
-}
-.credential-dialog {
-  width: 300px;
-  margin: auto;
-  margin-top: 100px;
-}
+// Centering the register user icon according to it's UI
 .register-user-icon {
   right: 13px;
   position: relative;
@@ -85,10 +71,35 @@ body {
 .tab-selector__block-label {
   display: block;
 }
-.credential-dialog__tab-content {
-    display: none;
+.credential-dialog__tab-link {
+  text-decoration: none;
+  &:hover .tab-selector{
+    background-color: darken($color-secondary, $dark-percent);
+    color: darken($color-secondary-accent, $dark-percent);
+  }
+  &.active .tab-selector {
+    background-color: $color-primary;
+    color: $color-primary-accent;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
+  }
+  &:focus .tab-selector {
+    background-color: $color-primary;
+    color: $color-primary-accent;
+  }
+}
+/**********/
+
+// Set fixed width dialog for the input fields, buttons and tabs
+.credential-dialog {
+  width: $no-of-tabs * $tab-width;
+  margin: auto;
+  margin-top: $tab-top-space;
+}
+.credential-dialog__tab-content {
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
 }
 // Animation effect for switching tabs
 @-webkit-keyframes fadeEffect {
@@ -100,189 +111,12 @@ body {
     to {opacity: 1;}
 }
 // Animation CSS ends here
-.credential-dialog__tab-link {
-  text-decoration: none;
-}
-.credential-dialog__tab-link:hover .tab-selector{
-  background-color: #d6d6d6;
-  color: #7a7a7a;
-}
-.credential-dialog__tab-link.active .tab-selector {
-  background-color: $primaryColor;
-  color: $primaryAccentColor;
-  -webkit-animation: fadeEffect 1s;
-  animation: fadeEffect 1s;
-}
-.credential-dialog__tab-link:focus .tab-selector {
-  background-color: $primaryColor;
-  color: $primaryAccentColor;
-}
+
 .forgot-password{
-    color: $primaryColor;
-    font-size: 12px;
+    color: $color-primary;
+    font-size: $font-small;
     text-align: center;
     display: block;
     margin-top: -10px;
     text-decoration: none;
-}
-// CSS for material like textfield
-.material-input-group { 
-  position: relative; 
-  margin: 30px 0px; 
-}
-.material-input-group__text-field {
-  color: #929292;
-  border: none;
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  font-size: 18px;
-  font-family: $primaryFont;
-  padding-left: 5px;
-  padding-top: 10px;
-  display: block;
-  height: 40px;
-  width: 100%;
-}
-.material-input-group__text-field:focus { 
-  outline:none; 
-}
-.material-input-group__label {
-  color: #aaaaaa; 
-  font-size: 14px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 14px;
-  transition: 0.2s ease all; 
-  -moz-transition: 0.2s ease all; 
-  -webkit-transition: 0.2s ease all;
-}
-.material-input-group__text-field:focus ~ .material-input-group__label, 
-.material-input-group__text-field:valid ~ .material-input-group__label,
-.material-input-group__text-field.used:invalid ~ .material-input-group__label {
-  top: -5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: $primaryColor;
-}
-.material-input-group__text-field.used:invalid ~ .material-input-group__label {
-  color: $errorColor;
-}
-.material-input-group__text-field.used:invalid + .material-input-group__animated-bar:before,
-.material-input-group__text-field.used:invalid + .material-input-group__animated-bar:after {
-  background: $errorColor;
-}
-.material-input-group__animated-bar {
-  position: relative;
-  display: block;
-  width: 100%; 
-  }
-.material-input-group__animated-bar:before, .material-input-group__animated-bar:after {
-  content: '';
-  height: 2px; 
-  width: 0;
-  bottom: 1px; 
-  position: absolute;
-  background: $primaryColor; 
-  transition: 0.2s ease all; 
-  -moz-transition: 0.2s ease all; 
-  -webkit-transition: 0.2s ease all;
-}
-.material-input-group__animated-bar:before {
-  left:50%;
-}
-.material-input-group__animated-bar:after {
-  right:50%; 
-}
-.material-input-group__text-field:focus ~ .material-input-group__animated-bar:before, 
-.material-input-group__text-field:focus ~ .material-input-group__animated-bar:after {
-  width:50%;
-}
-
-// CSS for material button with ripple effect
-.material-button {
-  -webkit-appearance: none; //To remove platform related styling if any- khudia
-  position: relative;
-  display: block; //To spread the button across full width
-  width: 100%;
-  height: 40px;
-  margin: 20px 0;
-  background: $primaryColor;
-  color: $primaryAccentColor;
-  font: inherit;
-  font-size: 18px;
-  border: none;
-  @extend .raised;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  // Hover, focus effects
-  &:hover,
-  &:focus {
-    background-color: darken($primaryColor, 5%);
-    outline: 0;
-    text-decoration: none;
-  }
-}
-
-// Mixin for primary and secondary colored button and hover effect accordingly
-@mixin button-modifier($class) {
-  $color: $primaryColor;
-  $colorAccent: $primaryAccentColor;
-
-  @if ($class == 'secondary') {
-    $color: $secondaryColor;
-    $colorAccent: $secondaryAccentColor;
-  }
-
-  .material-button--#{$class} {
-      color: $colorAccent;
-      background-color: $color;
-      &:hover {
-      background-color: darken($color, 5%);
-      }
-    }
-};
-// Including the button modifiers mixins
-@include button-modifier(primary);
-@include button-modifier(secondary);
-/********/
-
-.material-button-ripple {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: transparent;
-}
-
-.material-button-ripple__circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .25);
-  .material-button-ripple.is-active & {
-    animation: animate-ripple .4s ease-in;
-  }
-}
-
-// Ripple Animation
-@keyframes animate-ripple {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  100% {
-    width: 200%;
-    padding-bottom: 200%;
-    opacity: 0;
-  }
 }

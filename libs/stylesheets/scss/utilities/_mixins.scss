@@ -1,0 +1,18 @@
+// Mixin for primary and secondary colored button and hover effect accordingly
+@mixin button-modifier($class) {
+  $color: $color-primary;
+  $color-accent: $color-primary-accent;
+
+  @if ($class == 'secondary') {
+    $color: $color-secondary;
+    $color-accent: $color-secondary-accent;
+  }
+
+  .material-button--#{$class} {
+      color: $color-accent;
+      background-color: $color;
+      &:hover {
+      background-color: darken($color, $dark-percent);
+      }
+    }
+};

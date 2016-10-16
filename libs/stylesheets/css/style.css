@@ -1,188 +1,7 @@
-* {
-  margin: 0px;
-  padding: 0px; }
-
-body {
-  font-family: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif; }
-
-.background-cover-image {
-  background-image: url(../../../resources/images/cycles.jpg);
-  background-size: cover;
-  width: 50%;
-  position: fixed;
-  left: 0px;
-  height: 100%; }
-  @media screen and (max-width: 680px) {
-    .background-cover-image {
-      display: none; } }
-
-.logon-screen-half {
-  width: 50%;
-  position: absolute;
-  right: 0px;
-  height: 100%; }
-  @media screen and (max-width: 680px) {
-    .logon-screen-half {
-      width: 100%; } }
-
-.material-textfield {
-  height: 40px;
-  width: 100%;
-  display: block;
-  color: #929292;
-  background-color: #fff;
-  border: none;
-  margin: 30px 0px;
-  padding-left: 10px; }
-
-.material-textfield:focus {
-  outline: 0; }
-
-.raised, .tab-selector, .material-button {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
-
-.tab-selector {
-  width: 150px;
-  height: 150px;
-  background-color: #ebebeb;
-  color: #929292;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center; }
-
-.tab-selector:active {
-  background-color: #4996e8;
-  color: #fff; }
-
-.material-icons {
-  font-size: 100px !important; }
-
-.credential-dialog {
-  width: 300px;
-  margin: auto;
-  margin-top: 100px; }
-
-.register-user-icon {
-  right: 13px;
-  position: relative; }
-
-.tab-selector__block-label {
-  display: block; }
-
-.credential-dialog__tab-content {
-  display: none;
-  -webkit-animation: fadeEffect 1s;
-  animation: fadeEffect 1s; }
-
-@-webkit-keyframes fadeEffect {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-@keyframes fadeEffect {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-.credential-dialog__tab-link {
-  text-decoration: none; }
-
-.credential-dialog__tab-link:hover .tab-selector {
-  background-color: #d6d6d6;
-  color: #7a7a7a; }
-
-.credential-dialog__tab-link.active .tab-selector {
-  background-color: #4996e8;
-  color: #fff;
-  -webkit-animation: fadeEffect 1s;
-  animation: fadeEffect 1s; }
-
-.credential-dialog__tab-link:focus .tab-selector {
-  background-color: #4996e8;
-  color: #fff; }
-
-.forgot-password {
-  color: #4996e8;
-  font-size: 12px;
-  text-align: center;
-  display: block;
-  margin-top: -10px;
-  text-decoration: none; }
-
-.material-input-group {
-  position: relative;
-  margin: 30px 0px; }
-
-.material-input-group__text-field {
-  color: #929292;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  font-size: 18px;
-  font-family: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif;
-  padding-left: 5px;
-  padding-top: 10px;
-  display: block;
-  height: 40px;
-  width: 100%; }
-
-.material-input-group__text-field:focus {
-  outline: none; }
-
-.material-input-group__label {
-  color: #aaaaaa;
-  font-size: 14px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 14px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all; }
-
-.material-input-group__text-field:focus ~ .material-input-group__label,
-.material-input-group__text-field:valid ~ .material-input-group__label,
-.material-input-group__text-field.used:invalid ~ .material-input-group__label {
-  top: -5px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #4996e8; }
-
-.material-input-group__text-field.used:invalid ~ .material-input-group__label {
-  color: red; }
-
-.material-input-group__text-field.used:invalid + .material-input-group__animated-bar:before,
-.material-input-group__text-field.used:invalid + .material-input-group__animated-bar:after {
-  background: red; }
-
-.material-input-group__animated-bar {
-  position: relative;
-  display: block;
-  width: 100%; }
-
-.material-input-group__animated-bar:before, .material-input-group__animated-bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #4996e8;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all; }
-
-.material-input-group__animated-bar:before {
-  left: 50%; }
-
-.material-input-group__animated-bar:after {
-  right: 50%; }
-
-.material-input-group__text-field:focus ~ .material-input-group__animated-bar:before,
-.material-input-group__text-field:focus ~ .material-input-group__animated-bar:after {
-  width: 50%; }
-
+/*****ALL THE VARIABLES ARE DEFINED HERE*****/
+/*****Fonts used*****/
+/*****Path for given resources*****/
+/*****Sizes for different css properties*****/
 .material-button {
   -webkit-appearance: none;
   position: relative;
@@ -202,19 +21,6 @@ body {
     outline: 0;
     text-decoration: none; }
 
-.material-button--primary {
-  color: #fff;
-  background-color: #4996e8; }
-  .material-button--primary:hover {
-    background-color: #3289e5; }
-
-.material-button--secondary {
-  color: #929292;
-  background-color: #ebebeb; }
-  .material-button--secondary:hover {
-    background-color: #dedede; }
-
-/********/
 .material-button-ripple {
   position: absolute;
   top: 0;
@@ -246,3 +52,177 @@ body {
     width: 200%;
     padding-bottom: 200%;
     opacity: 0; } }
+
+.material-input-group {
+  position: relative;
+  margin: 30px 0px; }
+
+.material-input-group__animated-bar {
+  position: relative;
+  display: block;
+  width: 100%; }
+  .material-input-group__animated-bar:before, .material-input-group__animated-bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4996e8;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all; }
+  .material-input-group__animated-bar:before {
+    left: 50%; }
+  .material-input-group__animated-bar:after {
+    right: 50%; }
+
+.material-input-group__text-field {
+  color: #929292;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 18px;
+  font: inherit;
+  padding-left: 5px;
+  padding-top: 10px;
+  display: block;
+  height: 40px;
+  width: 100%; }
+  .material-input-group__text-field:focus {
+    outline: none; }
+  .material-input-group__text-field:focus ~ .material-input-group__label,
+  .material-input-group__text-field:valid ~ .material-input-group__label,
+  .material-input-group__text-field.used:invalid ~ .material-input-group__label {
+    top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4996e8; }
+  .material-input-group__text-field.used:invalid ~ .material-input-group__label {
+    color: red; }
+  .material-input-group__text-field.used:invalid + .material-input-group__animated-bar:before,
+  .material-input-group__text-field.used:invalid + .material-input-group__animated-bar:after {
+    background: red; }
+  .material-input-group__text-field:focus ~ .material-input-group__animated-bar:before,
+  .material-input-group__text-field:focus ~ .material-input-group__animated-bar:after {
+    width: 50%; }
+
+.material-input-group__label {
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 14px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all; }
+
+.material-button--primary {
+  color: #fff;
+  background-color: #4996e8; }
+  .material-button--primary:hover {
+    background-color: #3289e5; }
+
+.material-button--secondary {
+  color: #929292;
+  background-color: #ebebeb; }
+  .material-button--secondary:hover {
+    background-color: #dedede; }
+
+/********/
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  font-family: "Cabin", "Source Sans Pro", "Ubuntu Condensed", sans-serif; }
+
+.background-cover-image {
+  background-image: url("../../../resources/images/cycles.jpg");
+  background-size: cover;
+  width: 50%;
+  position: fixed;
+  left: 0px;
+  height: 100%; }
+  @media screen and (max-width: 680px) {
+    .background-cover-image {
+      display: none; } }
+
+.logon-screen-half {
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100%; }
+  @media screen and (max-width: 680px) {
+    .logon-screen-half {
+      width: 100%; } }
+
+.raised, .material-button, .tab-selector {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+/***** Tabs styling *****/
+.tab-selector {
+  width: 150px;
+  height: 150px;
+  background-color: #ebebeb;
+  color: #929292;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+  .tab-selector:active {
+    background-color: #4996e8;
+    color: #fff; }
+  .tab-selector .material-icons {
+    font-size: 100px !important; }
+
+.register-user-icon {
+  right: 13px;
+  position: relative; }
+
+.tab-selector__block-label {
+  display: block; }
+
+.credential-dialog__tab-link {
+  text-decoration: none; }
+  .credential-dialog__tab-link:hover .tab-selector {
+    background-color: #dedede;
+    color: #858585; }
+  .credential-dialog__tab-link.active .tab-selector {
+    background-color: #4996e8;
+    color: #fff;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; }
+  .credential-dialog__tab-link:focus .tab-selector {
+    background-color: #4996e8;
+    color: #fff; }
+
+/**********/
+.credential-dialog {
+  width: 300px;
+  margin: auto;
+  margin-top: 100px; }
+
+.credential-dialog__tab-content {
+  display: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; }
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.forgot-password {
+  color: #4996e8;
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  margin-top: -10px;
+  text-decoration: none; }

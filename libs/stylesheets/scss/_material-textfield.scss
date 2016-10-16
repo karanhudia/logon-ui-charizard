@@ -1,0 +1,74 @@
+// SCSS for material like textfield
+.material-input-group { 
+  position: relative; 
+  margin: $text-field-margin 0px; 
+}
+
+.material-input-group__animated-bar {
+  position: relative;
+  display: block;
+  width: 100%; 
+  &:before, &:after {
+    content: '';
+    height: 2px; 
+    width: 0;
+    bottom: 1px; 
+    position: absolute;
+    background: $color-primary; 
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+  }
+  &:before {
+    left:50%;
+  }
+  &:after {
+    right:50%; 
+  }
+}
+.material-input-group__text-field {
+  color: $color-secondary-accent;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  font-size: $font-medium;
+  font: inherit;
+  padding-left: 5px;
+  padding-top: 10px;
+  display: block;
+  height: 40px;
+  width: 100%;
+  &:focus { 
+    outline:none; 
+  }
+  &:focus ~ .material-input-group__label, 
+  &:valid ~ .material-input-group__label,
+  &.used:invalid ~ .material-input-group__label {
+    top: -5px;
+    font-size: $font-input-label;
+    font-weight: bold;
+    color: $color-primary;
+  }
+  &.used:invalid ~ .material-input-group__label {
+    color: $color-error;
+  }
+  &.used:invalid + .material-input-group__animated-bar:before,
+  &.used:invalid + .material-input-group__animated-bar:after {
+    background: $color-error;
+  }
+  &:focus ~ .material-input-group__animated-bar:before, 
+  &:focus ~ .material-input-group__animated-bar:after {
+    width:50%;
+  }
+}
+.material-input-group__label {
+  color: #aaaaaa; 
+  font-size: $font-input-label;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 14px;
+  transition: 0.2s ease all; 
+  -moz-transition: 0.2s ease all; 
+  -webkit-transition: 0.2s ease all;
+}
