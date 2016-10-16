@@ -9,7 +9,7 @@
   width: 100%;
   height: 40px;
   margin: 20px 0;
-  background: #4996e8;
+  background: #00AEC5;
   color: #fff;
   font: inherit;
   font-size: 18px;
@@ -17,7 +17,7 @@
   transition: all 0.2s ease;
   cursor: pointer; }
   .material-button:hover, .material-button:focus {
-    background-color: #3289e5;
+    background-color: #0097ac;
     outline: 0;
     text-decoration: none; }
 
@@ -67,7 +67,7 @@
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #4996e8;
+    background: #00AEC5;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all; }
@@ -95,7 +95,7 @@
     top: -5px;
     font-size: 14px;
     font-weight: bold;
-    color: #4996e8; }
+    color: #00AEC5; }
   .material-input-group__text-field.used:invalid ~ .material-input-group__label {
     color: red; }
   .material-input-group__text-field.used:invalid ~ .material-input-group__error {
@@ -129,9 +129,9 @@
 
 .material-button--primary {
   color: #fff;
-  background-color: #4996e8; }
+  background-color: #00AEC5; }
   .material-button--primary:hover {
-    background-color: #3289e5; }
+    background-color: #0097ac; }
 
 .material-button--secondary {
   color: #929292;
@@ -185,7 +185,7 @@ body {
   vertical-align: middle;
   text-align: center; }
   .tab-selector:active {
-    background-color: #4996e8;
+    background-color: #00AEC5;
     color: #fff; }
   .tab-selector .material-icons {
     font-size: 100px !important; }
@@ -203,12 +203,12 @@ body {
     background-color: #dedede;
     color: #858585; }
   .credential-dialog__tab-link.active .tab-selector {
-    background-color: #4996e8;
+    background-color: #00AEC5;
     color: #fff;
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s; }
   .credential-dialog__tab-link:focus .tab-selector {
-    background-color: #4996e8;
+    background-color: #00AEC5;
     color: #fff; }
 
 /**********/
@@ -235,7 +235,7 @@ body {
     opacity: 1; } }
 
 .small-link-primary {
-  color: #4996e8;
+  color: #00AEC5;
   font-size: 12px;
   text-align: center;
   display: block;
