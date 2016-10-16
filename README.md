@@ -105,6 +105,11 @@ Material Design by Google
  3. Phone number should contain 10 digits.
  
  
+## Platform requirement
+The page looks best on google chrome (blink engine) and Internet Explorer (Trident engine). Also at minimum page width of 680px or above. 
+Below 680px, the page becomes responsive and hence the image is made to hide.
+
+
 ## Examples
 Make following changes
 
